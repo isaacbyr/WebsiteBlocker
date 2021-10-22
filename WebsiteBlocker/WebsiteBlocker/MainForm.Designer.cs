@@ -38,6 +38,9 @@ namespace WebsiteBlocker
             this.blockButton = new System.Windows.Forms.Button();
             this.websiteTextbox = new System.Windows.Forms.TextBox();
             this.websitesListBox = new System.Windows.Forms.ListBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.setAdminPasswordMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerButton
@@ -135,6 +138,24 @@ namespace WebsiteBlocker
             this.websitesListBox.Size = new System.Drawing.Size(292, 244);
             this.websitesListBox.TabIndex = 8;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setAdminPasswordMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(556, 28);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // setAdminPasswordMenuItem
+            // 
+            this.setAdminPasswordMenuItem.Name = "setAdminPasswordMenuItem";
+            this.setAdminPasswordMenuItem.Size = new System.Drawing.Size(157, 24);
+            this.setAdminPasswordMenuItem.Text = "Set Admin Password";
+            this.setAdminPasswordMenuItem.Click += new System.EventHandler(this.setAdminPasswordToolStripMenuItem_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -149,12 +170,16 @@ namespace WebsiteBlocker
             this.Controls.Add(this.blockButton);
             this.Controls.Add(this.websiteTextbox);
             this.Controls.Add(this.websitesListBox);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "mainForm";
             this.Text = "Website Blocker";
             this.Load += new System.EventHandler(this.mainForm_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,6 +195,8 @@ namespace WebsiteBlocker
         private System.Windows.Forms.Button blockButton;
         private System.Windows.Forms.TextBox websiteTextbox;
         public System.Windows.Forms.ListBox websitesListBox;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem setAdminPasswordMenuItem;
     }
 }
 

@@ -21,6 +21,8 @@ namespace WebsiteBlocker
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+            WebsiteBlocker.Properties.Settings.Default.password = "";
+
             string hostPath = Application.StartupPath + @"\Files\Websites.txt";
 
             using(StreamReader r = new StreamReader(hostPath))
@@ -147,6 +149,13 @@ namespace WebsiteBlocker
             timerForm.ShowDialog();
             timerButton.Text = "Timer On!";
             timerButton.BackColor = System.Drawing.Color.LightCoral;
+        }
+
+        private void setAdminPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var setPasswordForm = new SetPasswordForm();
+            setPasswordForm.ShowDialog();
+            setAdminPasswordMenuItem.Text = "Change Password";
         }
     }
 }
