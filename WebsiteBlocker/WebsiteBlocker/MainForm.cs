@@ -67,6 +67,17 @@ namespace WebsiteBlocker
             {
                 return;
             }
+            // opens timerRunning dialog which can only be closed if user enters admin password
+            var timerRunningForm = new TimerRunningForm();
+            timerRunningForm.ShowDialog();
+
+            if(TimerForm.TimerOn == false)
+            {
+                timerRunningForm.Close();
+            }
+
+            // this unblocks websites from host file
+            unblock();
            
         }
 
@@ -81,7 +92,8 @@ namespace WebsiteBlocker
                 Process.Start(startInfo);
 
                 // get host file dir
-                string hostPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"drivers\etc\hosts");
+                //string hostPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"drivers\etc\hosts");
+                string hostPath = @"C:\Users\Isaac\OneDrive\Desktop\overwrite.txt";
 
                 // have locally saved blank host file to overwrite current host file and erase pre-existing blocked websites;
                 string localHostPath = Application.StartupPath + @"\Files\hosts.txt";
@@ -106,7 +118,8 @@ namespace WebsiteBlocker
 
                     foreach (var item in websitesListBox.Items)
                     {
-                        using (StreamWriter sw = File.AppendText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "drivers/etc/hosts")))
+                        //using (StreamWriter sw = File.AppendText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "drivers/etc/hosts")))
+                        using(StreamWriter sw = File.AppendText(hostPath))
                         {
                             sw.WriteLine("127.0.0.1 " + item.ToString());
                         }
@@ -147,8 +160,19 @@ namespace WebsiteBlocker
         {
             var timerForm = new TimerForm();
             timerForm.ShowDialog();
-            timerButton.Text = "Timer On!";
-            timerButton.BackColor = System.Drawing.Color.LightCoral;
+
+            // opens timerRunning dialog which can only be closed if user enters admin password
+            var timerRunningForm = new TimerRunningForm();
+            timerRunningForm.ShowDialog();
+
+            if (TimerForm.TimerOn == false)
+            {
+                timerRunningForm.Close();
+            }
+
+            // this unblocks websites from host file
+            unblock();
+
         }
 
         private void setAdminPasswordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,6 +180,68 @@ namespace WebsiteBlocker
             var setPasswordForm = new SetPasswordForm();
             setPasswordForm.ShowDialog();
             setAdminPasswordMenuItem.Text = "Change Password";
+        }
+
+        private void unblock()
+        {
+            try
+            {
+                // Run as admin to get acces to file;
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.Verb = "runas";
+                startInfo.FileName = Application.ExecutablePath;
+                Process.Start(startInfo);
+
+                // get host file dir
+               // string hostPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"drivers\etc\hosts");
+                string hostPath = @"C:\Users\Isaac\OneDrive\Desktop\overwrite.txt";
+
+                // have locally saved blank host file to overwrite current host file and erase pre-existing blocked websites;
+                string localHostPath = Application.StartupPath + @"\Files\hosts.txt";
+
+                var sbText = new System.Text.StringBuilder(1000);
+                int wCurrLine = 0;
+
+                const int LINES_PER_ROW = 12;
+
+                using(StreamReader reader = new StreamReader(localHostPath))
+                {
+                    while(!reader.EndOfStream)
+                    {
+                        if(wCurrLine != 0)
+                        {
+                            sbText.Append("\n");
+                        }
+                        sbText.Append(reader.ReadLine());
+
+                        wCurrLine++;
+
+                        if(wCurrLine == LINES_PER_ROW)
+                        {
+                            sbText.AppendLine();
+                            wCurrLine = 0;
+                        }
+                    }
+                    reader.Close();
+                }
+
+                using(StreamWriter writer = new StreamWriter(hostPath))
+                {
+                    writer.Write(sbText);
+                    writer.Close();
+                }
+         
+                MessageBox.Show("Websites Unblocked!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erorr");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            unblock();
         }
     }
 }

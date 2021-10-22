@@ -16,6 +16,8 @@ namespace WebsiteBlocker
 
         public System.Timers.Timer timer { get; set; } = new System.Timers.Timer();
         public static DateTime StartTime { get; set; }
+        public static bool TimerOn { get; set; } = false;
+
 
         public TimerForm()
         {
@@ -24,6 +26,7 @@ namespace WebsiteBlocker
 
         private void setButton_Click(object sender, EventArgs e)
         {
+            TimerOn = true;
             int time;
             int.TryParse(timeComboBox.Text, out time);
             timer.Interval = time * 1000;
@@ -39,6 +42,7 @@ namespace WebsiteBlocker
         {
             MessageBox.Show("Timer Ended");
             timer.Stop();
+            TimerOn = false;
         }
     }
 }

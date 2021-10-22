@@ -72,6 +72,12 @@
     <Compile Include="TimerForm.Designer.cs">
       <DependentUpon>TimerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimerRunningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimerRunningForm.Designer.cs">
+      <DependentUpon>TimerRunningForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InfoForm.resx">
       <DependentUpon>InfoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TimerForm.resx">
       <DependentUpon>TimerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimerRunningForm.resx">
+      <DependentUpon>TimerRunningForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

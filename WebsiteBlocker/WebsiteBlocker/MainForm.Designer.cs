@@ -85,7 +85,7 @@ namespace WebsiteBlocker
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(55, 35);
+            this.label1.Location = new System.Drawing.Point(55, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 12;
@@ -110,7 +110,7 @@ namespace WebsiteBlocker
             this.blockButton.BackColor = System.Drawing.Color.LightCoral;
             this.blockButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.blockButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.blockButton.Location = new System.Drawing.Point(402, 63);
+            this.blockButton.Location = new System.Drawing.Point(402, 76);
             this.blockButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.blockButton.Name = "blockButton";
             this.blockButton.Size = new System.Drawing.Size(95, 33);
@@ -121,7 +121,7 @@ namespace WebsiteBlocker
             // 
             // websiteTextbox
             // 
-            this.websiteTextbox.Location = new System.Drawing.Point(59, 63);
+            this.websiteTextbox.Location = new System.Drawing.Point(59, 76);
             this.websiteTextbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.websiteTextbox.Name = "websiteTextbox";
             this.websiteTextbox.Size = new System.Drawing.Size(292, 27);
@@ -140,19 +140,23 @@ namespace WebsiteBlocker
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setAdminPasswordMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(556, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(556, 30);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // setAdminPasswordMenuItem
             // 
+            this.setAdminPasswordMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.setAdminPasswordMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.setAdminPasswordMenuItem.Name = "setAdminPasswordMenuItem";
-            this.setAdminPasswordMenuItem.Size = new System.Drawing.Size(157, 24);
+            this.setAdminPasswordMenuItem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.setAdminPasswordMenuItem.Size = new System.Drawing.Size(167, 26);
             this.setAdminPasswordMenuItem.Text = "Set Admin Password";
             this.setAdminPasswordMenuItem.Click += new System.EventHandler(this.setAdminPasswordToolStripMenuItem_Click);
             // 
@@ -160,7 +164,7 @@ namespace WebsiteBlocker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(556, 440);
             this.Controls.Add(this.timerButton);
             this.Controls.Add(this.label2);
