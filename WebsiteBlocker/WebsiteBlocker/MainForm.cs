@@ -250,5 +250,11 @@ namespace WebsiteBlocker
             var changePasswordForm = new ChangePasswordForm();
             changePasswordForm.ShowDialog();
         }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mainInfoForm = new MainInfoForm();
+            mainInfoForm.ShowDialog();
+        }
     }
 }

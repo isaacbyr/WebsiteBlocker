@@ -41,6 +41,7 @@ namespace WebsiteBlocker
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setAdminPasswordMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeAdminPasswordMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,7 +146,8 @@ namespace WebsiteBlocker
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setAdminPasswordMenuItem,
-            this.changeAdminPasswordMenuItem});
+            this.changeAdminPasswordMenuItem,
+            this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(556, 28);
@@ -171,6 +173,16 @@ namespace WebsiteBlocker
             this.changeAdminPasswordMenuItem.Size = new System.Drawing.Size(186, 24);
             this.changeAdminPasswordMenuItem.Text = "Change Admin Password";
             this.changeAdminPasswordMenuItem.Click += new System.EventHandler(this.changeAdminPasswordToolStripMenuItem_Click);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.infoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.infoToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -215,6 +227,7 @@ namespace WebsiteBlocker
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem setAdminPasswordMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeAdminPasswordMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
     }
 }
 

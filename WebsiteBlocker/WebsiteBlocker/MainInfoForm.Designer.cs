@@ -1,7 +1,7 @@
 ﻿
 namespace WebsiteBlocker
 {
-    partial class InfoForm
+    partial class MainInfoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,44 +29,33 @@ namespace WebsiteBlocker
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainInfoForm));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 48);
+            this.label1.Location = new System.Drawing.Point(20, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.Size = new System.Drawing.Size(290, 102);
             this.label1.TabIndex = 0;
+            this.label1.Text = resources.GetString("label1.Text");
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(254, 68);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "This allows you to set an adminastrator\r\npassword that can be used to stop the\r\nb" +
-    "locking at any moment\r\n\r\n";
-            // 
-            // InfoForm
+            // MainInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(309, 145);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(331, 178);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "InfoForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Info Form";
+            this.Name = "MainInfoForm";
+            this.Text = "Info";
+            this.Load += new System.EventHandler(this.MainInfoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,6 +64,5 @@ namespace WebsiteBlocker
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
