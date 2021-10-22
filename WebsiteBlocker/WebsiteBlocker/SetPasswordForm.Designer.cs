@@ -29,6 +29,7 @@ namespace WebsiteBlocker
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetPasswordForm));
             this.passwordTextbox = new System.Windows.Forms.TextBox();
             this.setPasswordButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -61,7 +62,7 @@ namespace WebsiteBlocker
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.infoToolStripMenuItem});
@@ -73,6 +74,8 @@ namespace WebsiteBlocker
             // 
             // infoToolStripMenuItem
             // 
+            this.infoToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.infoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.infoToolStripMenuItem.Text = "Info";
@@ -87,6 +90,7 @@ namespace WebsiteBlocker
             this.Controls.Add(this.setPasswordButton);
             this.Controls.Add(this.passwordTextbox);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

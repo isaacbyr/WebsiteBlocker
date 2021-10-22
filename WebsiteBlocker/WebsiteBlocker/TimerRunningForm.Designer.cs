@@ -29,6 +29,7 @@ namespace WebsiteBlocker
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimerRunningForm));
             this.button1 = new System.Windows.Forms.Button();
             this.adminPasswordTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,11 +91,12 @@ namespace WebsiteBlocker
             this.Controls.Add(this.label2);
             this.Controls.Add(this.headerLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TimerRunningForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TimerRunning";
+            this.Text = "Timer Running";
             this.Load += new System.EventHandler(this.TimerRunningForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

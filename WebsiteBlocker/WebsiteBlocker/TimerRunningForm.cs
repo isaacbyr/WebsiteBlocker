@@ -21,7 +21,7 @@ namespace WebsiteBlocker
             InitializeComponent();
 
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = TimerForm.Time * 1000;
+            timer.Interval = TimerForm.Time * 60000;
             timer.Tick += new EventHandler(OnTimeEvent);
             timer.Enabled = true;
             timer.Start();

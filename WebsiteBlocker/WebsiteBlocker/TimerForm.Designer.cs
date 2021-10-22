@@ -29,6 +29,7 @@ namespace WebsiteBlocker
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimerForm));
             this.label1 = new System.Windows.Forms.Label();
             this.timeComboBox = new System.Windows.Forms.ComboBox();
             this.setButton = new System.Windows.Forms.Button();
@@ -81,6 +82,7 @@ namespace WebsiteBlocker
             this.Controls.Add(this.label1);
             this.Controls.Add(this.timeComboBox);
             this.Controls.Add(this.setButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TimerForm";
