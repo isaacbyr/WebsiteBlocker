@@ -52,6 +52,7 @@ namespace WebsiteBlocker
             this.timerButton.TabIndex = 15;
             this.timerButton.Text = "Set Timer";
             this.timerButton.UseVisualStyleBackColor = false;
+            this.timerButton.Click += new System.EventHandler(this.timerButton_Click);
             // 
             // label2
             // 
@@ -75,6 +76,7 @@ namespace WebsiteBlocker
             this.saveButton.TabIndex = 13;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // label1
             // 
@@ -98,6 +100,7 @@ namespace WebsiteBlocker
             this.unblockButon.TabIndex = 11;
             this.unblockButon.Text = "Unblock";
             this.unblockButon.UseVisualStyleBackColor = false;
+            this.unblockButon.Click += new System.EventHandler(this.unblockButon_Click);
             // 
             // blockButton
             // 
@@ -111,6 +114,7 @@ namespace WebsiteBlocker
             this.blockButton.TabIndex = 10;
             this.blockButton.Text = "Block";
             this.blockButton.UseVisualStyleBackColor = false;
+            this.blockButton.Click += new System.EventHandler(this.blockButton_Click);
             // 
             // websiteTextbox
             // 
@@ -150,6 +154,7 @@ namespace WebsiteBlocker
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "mainForm";
             this.Text = "Website Blocker";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
