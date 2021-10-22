@@ -32,7 +32,7 @@ namespace WebsiteBlocker
             this.button1 = new System.Windows.Forms.Button();
             this.adminPasswordTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.headerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -68,16 +68,16 @@ namespace WebsiteBlocker
             this.label2.TabIndex = 5;
             this.label2.Text = "Enter Admin Password:";
             // 
-            // label1
+            // headerLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(103, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 38);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Timer Running!";
+            this.headerLabel.AutoSize = true;
+            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headerLabel.ForeColor = System.Drawing.Color.Red;
+            this.headerLabel.Location = new System.Drawing.Point(103, 62);
+            this.headerLabel.Name = "headerLabel";
+            this.headerLabel.Size = new System.Drawing.Size(221, 38);
+            this.headerLabel.TabIndex = 4;
+            this.headerLabel.Text = "Timer Running!";
             // 
             // TimerRunningForm
             // 
@@ -88,13 +88,14 @@ namespace WebsiteBlocker
             this.Controls.Add(this.button1);
             this.Controls.Add(this.adminPasswordTextbox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.headerLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TimerRunningForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimerRunning";
+            this.Load += new System.EventHandler(this.TimerRunningForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +106,6 @@ namespace WebsiteBlocker
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox adminPasswordTextbox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label headerLabel;
     }
 }

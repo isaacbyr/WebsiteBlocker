@@ -14,10 +14,7 @@ namespace WebsiteBlocker
     public partial class TimerForm : Form
     {
 
-        public System.Timers.Timer timer { get; set; } = new System.Timers.Timer();
-        public static DateTime StartTime { get; set; }
-        public static bool TimerOn { get; set; } = false;
-
+        public static int Time { get; set; }
 
         public TimerForm()
         {
@@ -26,23 +23,13 @@ namespace WebsiteBlocker
 
         private void setButton_Click(object sender, EventArgs e)
         {
-            TimerOn = true;
             int time;
             int.TryParse(timeComboBox.Text, out time);
-            timer.Interval = time * 1000;
-            timer.Elapsed += new ElapsedEventHandler(OnTimeEvent);
-            timer.Enabled = true;
-            timer.Start();
-            StartTime = DateTime.Now;
+            Time = time;
             MessageBox.Show("Timer Started!");
             this.Close();
+            
         }
 
-        private void OnTimeEvent(object sender, ElapsedEventArgs e)
-        {
-            MessageBox.Show("Timer Ended");
-            timer.Stop();
-            TimerOn = false;
-        }
     }
 }

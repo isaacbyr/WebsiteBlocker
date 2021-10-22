@@ -21,6 +21,8 @@ namespace WebsiteBlocker
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+
+            changeAdminPasswordMenuItem.Visible = false;
             WebsiteBlocker.Properties.Settings.Default.password = "";
 
             string hostPath = Application.StartupPath + @"\Files\Websites.txt";
@@ -67,14 +69,10 @@ namespace WebsiteBlocker
             {
                 return;
             }
+
             // opens timerRunning dialog which can only be closed if user enters admin password
             var timerRunningForm = new TimerRunningForm();
             timerRunningForm.ShowDialog();
-
-            if(TimerForm.TimerOn == false)
-            {
-                timerRunningForm.Close();
-            }
 
             // this unblocks websites from host file
             unblock();
@@ -92,8 +90,8 @@ namespace WebsiteBlocker
                 Process.Start(startInfo);
 
                 // get host file dir
-                //string hostPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"drivers\etc\hosts");
-                string hostPath = @"C:\Users\Isaac\OneDrive\Desktop\overwrite.txt";
+                string hostPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"drivers\etc\hosts");
+                //string hostPath = @"C:\Users\Isaac\OneDrive\Desktop\overwrite.txt";
 
                 // have locally saved blank host file to overwrite current host file and erase pre-existing blocked websites;
                 string localHostPath = Application.StartupPath + @"\Files\hosts.txt";
@@ -158,17 +156,19 @@ namespace WebsiteBlocker
 
         private void timerButton_Click(object sender, EventArgs e)
         {
+            
             var timerForm = new TimerForm();
             timerForm.ShowDialog();
 
-            // opens timerRunning dialog which can only be closed if user enters admin password
+
+            // this method stores the blocked wesbites in a local file
+            addLocally();
+
+            // this method adds the blocked wesbites to the /drivers/etc/host file
+            addToHost();
+
             var timerRunningForm = new TimerRunningForm();
             timerRunningForm.ShowDialog();
-
-            if (TimerForm.TimerOn == false)
-            {
-                timerRunningForm.Close();
-            }
 
             // this unblocks websites from host file
             unblock();
@@ -179,7 +179,8 @@ namespace WebsiteBlocker
         {
             var setPasswordForm = new SetPasswordForm();
             setPasswordForm.ShowDialog();
-            setAdminPasswordMenuItem.Text = "Change Password";
+            setAdminPasswordMenuItem.Visible = false;
+            changeAdminPasswordMenuItem.Visible = true;
         }
 
         private void unblock()
@@ -193,8 +194,8 @@ namespace WebsiteBlocker
                 Process.Start(startInfo);
 
                 // get host file dir
-               // string hostPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"drivers\etc\hosts");
-                string hostPath = @"C:\Users\Isaac\OneDrive\Desktop\overwrite.txt";
+                string hostPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"drivers\etc\hosts");
+                //string hostPath = @"C:\Users\Isaac\OneDrive\Desktop\overwrite.txt";
 
                 // have locally saved blank host file to overwrite current host file and erase pre-existing blocked websites;
                 string localHostPath = Application.StartupPath + @"\Files\hosts.txt";
@@ -242,6 +243,12 @@ namespace WebsiteBlocker
         private void button1_Click(object sender, EventArgs e)
         {
             unblock();
+        }
+
+        private void changeAdminPasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var changePasswordForm = new ChangePasswordForm();
+            changePasswordForm.ShowDialog();
         }
     }
 }

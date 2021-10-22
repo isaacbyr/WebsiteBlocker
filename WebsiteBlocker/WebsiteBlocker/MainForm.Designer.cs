@@ -40,6 +40,7 @@ namespace WebsiteBlocker
             this.websitesListBox = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setAdminPasswordMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeAdminPasswordMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,10 +144,11 @@ namespace WebsiteBlocker
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setAdminPasswordMenuItem});
+            this.setAdminPasswordMenuItem,
+            this.changeAdminPasswordMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(556, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(556, 28);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -156,9 +158,19 @@ namespace WebsiteBlocker
             this.setAdminPasswordMenuItem.ForeColor = System.Drawing.SystemColors.Window;
             this.setAdminPasswordMenuItem.Name = "setAdminPasswordMenuItem";
             this.setAdminPasswordMenuItem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.setAdminPasswordMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.setAdminPasswordMenuItem.Size = new System.Drawing.Size(167, 24);
             this.setAdminPasswordMenuItem.Text = "Set Admin Password";
             this.setAdminPasswordMenuItem.Click += new System.EventHandler(this.setAdminPasswordToolStripMenuItem_Click);
+            // 
+            // changeAdminPasswordMenuItem
+            // 
+            this.changeAdminPasswordMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.changeAdminPasswordMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.changeAdminPasswordMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.changeAdminPasswordMenuItem.Name = "changeAdminPasswordMenuItem";
+            this.changeAdminPasswordMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.changeAdminPasswordMenuItem.Text = "Change Admin Password";
+            this.changeAdminPasswordMenuItem.Click += new System.EventHandler(this.changeAdminPasswordToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -180,6 +192,7 @@ namespace WebsiteBlocker
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "mainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Website Blocker";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -201,6 +214,7 @@ namespace WebsiteBlocker
         public System.Windows.Forms.ListBox websitesListBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem setAdminPasswordMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeAdminPasswordMenuItem;
     }
 }
 
